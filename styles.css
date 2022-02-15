@@ -12,50 +12,64 @@ body {
 }
 
 .container-div {
-    height: 75vh;
+    height: 65vh;
     width: 20vw;
     border-radius:40px;
-    background-color: #1f1d2c;
+    /* background-color: #1f1d2c; */
+    background-color: #231f20;
     display: flex;
     justify-content: center;
-    padding: 50px;
+    padding: 70px;
     box-shadow: 5px 30px 35px #00000070;
 }
 
+.welcome-img-div {
+    display: flex;
+    justify-content: center;
+}
+
 .welcome-img-div img{
-    width: 20vw;
+    width: 23vw;
     border-radius:20px;
-    margin-top: 50px;
+    /* margin-top: 50px; */
 }
 
 h1 {
-    color: rgb(241, 241, 241);
+    color: rgb(255, 250, 219);
     text-align: center;
-    padding-top: 100px;
+    padding-top: 30px;
+    font-size: 50px;
 }
 
 p {
-    color: rgba(240, 248, 255, 0.603);
+    color: rgba(255, 250, 219, 0.548);
     text-align: center;
     line-height: 40px;
+    font-size: 18px;
 }
 
 .get-started-div {
     display: flex;
     justify-content: center;
-    margin-top: 100px;
+    margin-top: 50px;
 }
 
-.get-started-div button {
+#get-started-button {
     font-family: 'Quicksand', sans-serif;
     border: none;
     border-radius: 40px;
-    background-color: rgb(47, 136, 255);
-    padding: 25px 70px 25px 70px;
-    font-size: 24px;
-    color: rgba(255, 255, 255, 0.89);
+    background-color: rgb(241, 172, 76);
+    padding: 25px 60px 25px 60px;
+    font-size: 28px;
+    font-weight: 400;
+    color: rgb(22, 22, 22);
 }
 
-.get-started-div button:hover {
-    background-color: rgb(0, 96, 221);
+#get-started-button:hover {
+    background-color: rgb(255, 203, 131);
+}
+
+
+.page-2 {
+    display: none;
 }
