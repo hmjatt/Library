@@ -1,3 +1,4 @@
+/* CSS for Library App page 2 */
 /* CSS for Library App Page 1 */
 
 html {
@@ -17,6 +18,7 @@ body {
     border-radius:40px;
     /* background-color: #1f1d2c; */
     background-color: #231f20;
+    
     display: flex;
     justify-content: center;
     padding: 70px;
