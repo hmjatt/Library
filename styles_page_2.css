@@ -1,0 +1,304 @@
+
+
+html {
+    background-color: #3f3b51;
+    font-family: 'Quicksand', sans-serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+
+.container-div {
+    height: 90vh;
+    width: 90vw;
+    border-radius:40px;
+    background-color: #231f20;
+    /* display: flex;
+    justify-content: center; */
+    padding: 20px 70px;
+    box-shadow: 5px 20px 25px #00000050;
+}
+
+.page-2 {
+    display: grid;
+    /* grid-column-gap: 20px; */
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas: 
+      "heading-div heading-div heading-div"
+      "filter-div filter-div filter-div"
+      "books-div books-div books-div"
+      ". add-book-div ."
+    
+      ;
+}
+
+
+h1 {
+    color: rgb(255, 250, 219);
+    text-align: center;
+    font-size: 40px;
+}
+
+h2 {
+    color: rgb(255, 250, 219);
+    text-align: center;
+    font-size: 30px;
+}
+
+h3 {
+    color: rgba(255, 250, 219, 0.486);
+    text-align: center;
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: 0px;
+}
+
+p, label {
+    color: rgba(255, 250, 219, 0.548);
+    text-align: center;
+    line-height: 20px;
+    font-size: 14px;
+}
+
+.heading-div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+    grid-area: heading-div;
+}
+
+.logo, .search, .dark-mode {
+    align-self: center;
+}
+
+.search button {
+    background-color: #231f20;
+    border: none;
+}
+
+.input-div {
+    display: flex;
+}
+
+#theme-toggle {
+    background-image: url('images/svgs/dark-mode.svg');
+    height: 52px;
+    width: 52px;
+    background-repeat: no-repeat;
+}
+
+/* style for custom search-text start */
+
+#search-item {
+    
+    
+    font-family: 'Quicksand', sans-serif;
+    width: 350px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('images/svgs/search.svg');
+    background-position: 10px 10px; 
+    padding: 12px 20px 16px 60px;
+    background-repeat: no-repeat;
+    border: 3px solid #ccc;
+    transition: 0.5s;
+    outline: none;
+}
+
+#search-item:focus {
+    border: 3px solid #2f88ff;
+  }
+
+
+
+/* style for custom search-text end */
+
+
+.filter-div {
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 20px;
+
+    grid-area: filter-div;
+}
+
+.filter-div a {
+    text-decoration: none;
+    color: rgba(255, 250, 219, 0.678);
+    
+}
+
+
+.filter-div h4 {
+    text-decoration: none;
+    color: rgba(255, 250, 219, 0.678);
+    border-bottom: 5px solid #231f20;
+}
+
+.filter-div h4:hover {
+    color: rgb(255, 197, 36);
+    border-bottom: 5px solid rgb(255, 197, 36);
+}
+
+
+.filter-div h4::after, .filter-div h4:focus {
+    color: rgb(255, 197, 36);
+    border-bottom: 5px solid rgb(255, 197, 36);
+}
+
+
+.books-div {
+    display: flex;
+    justify-content: space-around;
+    grid-area: books-div;
+
+}
+
+.book {
+    width: 23vw;
+    
+    background-color: #413f40;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.image-div {
+    display: flex;
+    white-space: initial;
+    padding: 20px;
+    flex-direction: column;
+}
+
+.read-div {
+    align-self: center;
+    margin: 20px 0px 20px -40px;
+}
+
+/* style for custom checkmark start */
+
+input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    margin-left: 20px;
+    height: 22px;
+    width: 22px;
+    background-color: #413f40;
+    border: 1px solid rgb(192, 191, 191);
+    border-radius: 15px;
+}
+
+.read-container:hover input ~ .checkmark {
+    background-color: rgb(134, 134, 134);
+}
+
+.read-container input:checked ~ .checkmark {
+    background-color: #2f88ff;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.read-container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.read-container .checkmark:after {
+    left: 8px;
+    top: 4px;
+    width: 4px;
+    height: 8px;
+    border: solid rgb(247, 247, 247);
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+/* style for custom checkmark end */
+
+.notes-div {
+    align-self: center;
+
+}
+
+.notes-div button {
+    background-color: rgb(255, 197, 36);
+    border: none;
+    border-radius: 50px;
+    padding: 15px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.notes-div button:hover {
+    background-color: rgb(255, 219, 122);
+
+}
+
+.pages-div {
+    align-self: center;
+    margin: 20px;
+}
+
+.fav-svg-div {
+    align-self: center;
+}
+
+.add-book-div {
+    display: flex;
+    justify-content: center;
+    margin: 50px;
+    grid-area: add-book-div;
+}
+
+
+
+
+.logo img {
+    width: 80px;
+    border-radius: 50px;
+}
+
+.book-cover {
+    width: 10vw;
+    align-self: center;
+    border-radius: 10px;
+}
+
+.fav-svg {
+    width: 48px;
+}
+
+.add-book-div img {
+    width: 96px;
+}
+
+
+
+
+
+

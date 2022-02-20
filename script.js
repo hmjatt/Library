@@ -59,3 +59,35 @@ function search() {
         }
     }
 }
+
+
+// code to swtich between themes
+
+// // Select the button
+// const btn = document.querySelector(".theme-toggle");
+
+// // Listen for a click on the button
+// btn.addEventListener("click", function() {
+//     // Then toggle (add/remove) the .dark-theme class to the body
+//     document.body.classList.toggle("dark-theme");
+// });
+
+
+
+// Select the button
+const btn = document.querySelector("#theme-toggle");
+// Select the stylesheet <link>
+const theme = document.querySelector("#light-theme-link");
+
+// Listen for a click on the button
+btn.addEventListener("click", function() {
+  // If the current URL contains "ligh-theme.css"
+  if (theme.getAttribute("href") == "styles_page_2.css") {
+    // ... then switch it to "dark-theme.css"
+    theme.href = "styles_page_2_light.css";
+  // Otherwise...
+  } else {
+    // ... switch it to "light-theme.css"
+    theme.href = "styles_page_2.css";
+  }
+});

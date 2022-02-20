@@ -1,7 +1,7 @@
-/* CSS for Library App Page 2 */
+
 
 html {
-    background-color: #3f3b51;
+    background-color: #e2e2e2;
     font-family: 'Quicksand', sans-serif;
     height: 100vh;
     display: flex;
@@ -15,20 +15,20 @@ body {
     margin: 20px;
 }
 
+
 .container-div {
     height: 90vh;
     width: 90vw;
     border-radius:40px;
-    background-color: #231f20;
-    /* display: flex;
-    justify-content: center; */
+    background-color: #fff7eb;
+
     padding: 20px 70px;
     box-shadow: 5px 20px 25px #00000050;
 }
 
 .page-2 {
     display: grid;
-    /* grid-column-gap: 20px; */
+
     grid-template-columns: auto;
     grid-template-rows: auto;
     grid-template-areas: 
@@ -42,19 +42,19 @@ body {
 
 
 h1 {
-    color: rgb(255, 250, 219);
+    color: rgb(65, 65, 65);
     text-align: center;
     font-size: 40px;
 }
 
 h2 {
-    color: rgb(255, 250, 219);
+    color: rgb(65, 65, 65);
     text-align: center;
     font-size: 30px;
 }
 
 h3 {
-    color: rgba(255, 250, 219, 0.486);
+    color: rgb(43, 43, 43);
     text-align: center;
     font-size: 16px;
     font-weight: 400;
@@ -62,7 +62,7 @@ h3 {
 }
 
 p, label {
-    color: rgba(255, 250, 219, 0.548);
+    color: rgb(0, 0, 0);
     text-align: center;
     line-height: 20px;
     font-size: 14px;
@@ -84,9 +84,20 @@ p, label {
     border: none;
 }
 
+
 .input-div {
     display: flex;
 }
+
+#theme-toggle {
+    background-image: url('images/svgs/light-mode.svg');
+    height: 48px;
+    width: 48px;
+    background-repeat: no-repeat;
+    border: none;
+    background-color: #231f20;
+}
+
 
 /* style for custom search-text start */
 
@@ -128,15 +139,15 @@ p, label {
 
 .filter-div a {
     text-decoration: none;
-    color: rgba(255, 250, 219, 0.678);
+    color: rgb(65, 65, 65);
     
 }
 
 
 .filter-div h4 {
     text-decoration: none;
-    color: rgba(255, 250, 219, 0.678);
-    border-bottom: 5px solid #231f20;
+    color: rgb(65, 65, 65);;
+    border-bottom: 5px solid #fff7eb;
 }
 
 .filter-div h4:hover {
@@ -161,7 +172,7 @@ p, label {
 .book {
     width: 23vw;
     
-    background-color: #413f40;
+    background-color: #9bd3dd;
     border-radius: 15px;
     display: flex;
     justify-content: center;
@@ -292,70 +303,4 @@ input[type="checkbox"] {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* .welcome-img-div {
-    display: flex;
-    justify-content: center;
-}
-
-.welcome-img-div img{
-    width: 300px;
-}
-
-h1 {
-    color: rgb(255, 250, 219);
-    text-align: center;
-    font-size: 40px;
-}
-
-p {
-    color: rgba(255, 250, 219, 0.548);
-    text-align: center;
-    line-height: 20px;
-    font-size: 14px;
-}
-
-.get-started-div {
-    display: flex;
-    justify-content: center;
-    margin-top: 50px;
-}
-
-#get-started-button {
-    font-family: 'Quicksand', sans-serif;
-    border: none;
-    border-radius: 40px;
-    background-color: rgb(241, 172, 76);
-    padding: 15px 30px 15px 30px;
-    font-size: 18px;
-    font-weight: 400;
-    color: rgb(22, 22, 22);
-}
-
-#get-started-button:hover {
-    background-color: rgb(255, 203, 131);
-} */
 
