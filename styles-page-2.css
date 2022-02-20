@@ -79,6 +79,45 @@ p, label {
     align-self: center;
 }
 
+.search button {
+    background-color: #231f20;
+    border: none;
+}
+
+.input-div {
+    display: flex;
+}
+
+/* style for custom search-text start */
+
+#search-item {
+    
+    
+    font-family: 'Quicksand', sans-serif;
+    width: 350px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('images/svgs/search.svg');
+    background-position: 10px 10px; 
+    padding: 12px 20px 16px 60px;
+    background-repeat: no-repeat;
+    border: 3px solid #ccc;
+    transition: 0.5s;
+    outline: none;
+}
+
+#search-item:focus {
+    border: 3px solid #2f88ff;
+  }
+
+
+
+/* style for custom search-text end */
+
+
 .filter-div {
     display: flex;
     justify-content: space-around;
@@ -140,7 +179,7 @@ p, label {
     margin: 20px 0px 20px -40px;
 }
 
-/* custom checkmark start */
+/* style for custom checkmark start */
 
 input[type="checkbox"] {
     position: absolute;
@@ -190,7 +229,7 @@ input[type="checkbox"] {
     transform: rotate(45deg);
 }
 
-/* custom checkmark end */
+/* style for custom checkmark end */
 
 .notes-div {
     align-self: center;
