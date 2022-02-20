@@ -41,14 +41,16 @@
 
 
 
+
+
 // code to search for content
 
 
 function search() {
-    let input = document.getElementById('search-item').value
-    let book = document.getElementsByClassName('book');
+    let input = document.getElementById("search-item").value
+    let book = document.getElementsByClassName("book");
     input=input.toLowerCase();
-    let x = document.getElementsByTagName('h2');
+    let x = document.getElementsByTagName("h2");
       
     for (i = 0; i < x.length; i++) { 
         if (!x[i].innerHTML.toLowerCase().includes(input)) {
@@ -61,26 +63,17 @@ function search() {
 }
 
 
+
+
 // code to swtich between themes
 
-// // Select the button
-// const btn = document.querySelector(".theme-toggle");
-
-// // Listen for a click on the button
-// btn.addEventListener("click", function() {
-//     // Then toggle (add/remove) the .dark-theme class to the body
-//     document.body.classList.toggle("dark-theme");
-// });
-
-
-
 // Select the button
-const btn = document.querySelector("#theme-toggle");
+const themeBtn = document.querySelector("#theme-toggle");
 // Select the stylesheet <link>
 const theme = document.querySelector("#light-theme-link");
 
 // Listen for a click on the button
-btn.addEventListener("click", function() {
+themeBtn.addEventListener("click", function() {
   // If the current URL contains "ligh-theme.css"
   if (theme.getAttribute("href") == "styles_page_2.css") {
     // ... then switch it to "dark-theme.css"
@@ -91,3 +84,54 @@ btn.addEventListener("click", function() {
     theme.href = "styles_page_2.css";
   }
 });
+
+
+
+
+// code to add a book to favorites
+
+const favBtn = document.getElementsByClassName("fav-btn");
+
+
+Array.from(favBtn).forEach((el) => {
+    // Do stuff here
+    
+        el.addEventListener("click", function() {
+            let favBook = el.parentElement.parentElement;
+            console.log(favBook.className);
+            
+        if (favBook.className == "image-div") {
+            // ... then add "fav" to it
+            favBook.className = "image-div fav";
+          // Otherwise...
+          } else {
+            // ... switch it to "light-theme.css"
+            favBook.className = "image-div";
+          }
+    });
+});
+
+
+// code to filter all books or favorite books 
+
+// const filterAllBtn = document.getElementById("all-link");
+// const filterFavBtn = document.getElementById("favorite-link");
+
+
+// Array.from(favEle).forEach((ele) => {
+//     ele.addEventListener("click", function() {
+//         console.log('fav',);
+//     });
+
+// });
+
+// filterFavBtn.addEventListener("click", function() {
+//     console.log('fav',);
+// });
+
+// filterAllBtn.addEventListener("click", function() {
+//     console.log('all');
+// });
+
+const favEle = document.getElementsByClassName("book");
+console.log(favEle);

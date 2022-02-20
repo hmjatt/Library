@@ -268,6 +268,21 @@ input[type="checkbox"] {
     align-self: center;
 }
 
+.fav-btn {
+    border: none;
+    background-color:#231f20;
+    border-radius: 70px;
+}
+
+.fav-btn:hover {
+    background-color:#575656;
+}
+
+.fav button {
+    background-color: orange;
+}
+
+
 .add-book-div {
     display: flex;
     justify-content: center;
