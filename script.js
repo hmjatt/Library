@@ -170,12 +170,16 @@ allEle.addEventListener("click", function() {
 // code to add notes
 
 const notesBtn = document.getElementsByClassName("notes-btn");
-const text = document.getElementById("popup");
+const text = document.getElementsByClassName("popup");
 
   Array.from(notesBtn).forEach((btn) => {
     btn.addEventListener("click", function() {
-      text.classList.toggle("hide");
-  text.classList.toggle("show");
+
+      Array.from(text).forEach((btns) => {
+        btns.classList.toggle("hide");
+        btns.classList.toggle("show");
+      });
+
     });
 });
 
