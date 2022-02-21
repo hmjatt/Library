@@ -3,7 +3,6 @@
 html {
     background-color: #3f3b51;
     font-family: 'Quicksand', sans-serif;
-    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -12,12 +11,12 @@ html {
 body {
     display: flex;
     justify-content: center;
-    margin: 20px;
+    /* padding: 130px 20px 20px 20px; */
 }
 
 
 .container-div {
-    height: 90vh;
+    height: 95vh;
     width: 90vw;
     border-radius:40px;
     background-color: #231f20;
@@ -30,6 +29,7 @@ body {
 .page-2 {
     display: grid;
     /* grid-column-gap: 20px; */
+    height: 92vh;
     grid-template-columns: auto;
     grid-template-rows: auto;
     grid-template-areas: 
@@ -240,8 +240,14 @@ input[type="checkbox"] {
 /* style for custom checkmark end */
 
 .notes-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-self: center;
+}
 
+.notes-btn, .add-notes-btn {
+    align-self: center;
 }
 
 .notes-div button {
@@ -252,12 +258,19 @@ input[type="checkbox"] {
     font-family: 'Quicksand', sans-serif;
     font-size: 14px;
     font-weight: 500;
+    width: 120px;
 }
 
 .notes-div button:hover {
     background-color: rgb(255, 219, 122);
 
 }
+
+.notes-div input {
+    margin: 10px;
+}
+
+/* for notes */
 
 form {
     width: 50%;
@@ -271,9 +284,11 @@ form {
     display: block;
 }
 
+/* for notes */
+
+
 .pages-div {
     align-self: center;
-    margin: 20px;
 }
 
 .fav-svg-div {
@@ -324,7 +339,19 @@ form {
     width: 96px;
 }
 
+.note-input {
+    font-family: 'Quicksand', sans-serif;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
 
+    /* padding: 12px 20px 16px 60px; */
+    border: 3px solid #ccc;
+    transition: 0.5s;
+    outline: none;
+}
 
 
 

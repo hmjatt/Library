@@ -170,16 +170,54 @@ allEle.addEventListener("click", function() {
 // code to add notes
 
 const notesBtn = document.getElementsByClassName("notes-btn");
-const text = document.getElementsByClassName("popup");
+
 
   Array.from(notesBtn).forEach((btn) => {
     btn.addEventListener("click", function() {
+      let text = btn.nextSibling.nextSibling;
+      let sbmt = btn.nextSibling.nextSibling.nextSibling.nextSibling;
+      
+      text.classList.toggle("hide");
+      text.classList.toggle("show");
 
-      Array.from(text).forEach((btns) => {
-        btns.classList.toggle("hide");
-        btns.classList.toggle("show");
-      });
+      sbmt.classList.toggle("hide");
+      sbmt.classList.toggle("show");
 
     });
 });
+
+
+// code to show notes on book
+
+const notesPara= document.getElementsByClassName("note-para");
+
+const addNotesBtn = document.getElementsByClassName("add-notes-btn");
+
+Array.from(addNotesBtn).forEach((addBtn) => {
+  addBtn.addEventListener("click", function() {
+    let inputEle = addBtn.previousSibling.previousSibling;
+    let thatNote = addBtn.previousSibling.previousSibling.value;
+    let bookNote = addBtn.nextSibling.nextSibling;
+
+    bookNote.innerHTML = thatNote;
+    addBtn.classList.toggle("hide");
+    addBtn.classList.toggle("show");
+
+    inputEle.classList.toggle("hide");
+    inputEle.classList.toggle("show");
+    console.log(inputEle, addBtn, bookNote, thatNote);
+
+
+  });
+});
+
+  // Array.from(notesPara).forEach((para) => {
+  //   para.addEventListener("click", function() {
+  //     let text = btn.nextSibling.nextSibling;
+      
+  //     text.classList.toggle("hide");
+  //     text.classList.toggle("show");
+
+  //   });
+// });
 

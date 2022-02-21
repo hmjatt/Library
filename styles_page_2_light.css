@@ -3,7 +3,7 @@
 html {
     background-color: #e2e2e2;
     font-family: 'Quicksand', sans-serif;
-    height: 100vh;
+    height: 90vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -12,7 +12,7 @@ html {
 body {
     display: flex;
     justify-content: center;
-    margin: 20px;
+    padding: 150px 20px 20px 20px;
 }
 
 
@@ -243,8 +243,10 @@ input[type="checkbox"] {
 /* style for custom checkmark end */
 
 .notes-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-self: center;
-
 }
 
 .notes-div button {
@@ -262,9 +264,28 @@ input[type="checkbox"] {
 
 }
 
+.notes-div input {
+    margin: 10px;
+}
+
+/* for notes */
+
+form {
+    width: 50%;
+}
+  
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+/* for notes */
+
 .pages-div {
     align-self: center;
-    margin: 20px;
 }
 
 .fav-svg-div {
