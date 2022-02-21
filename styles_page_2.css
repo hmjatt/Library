@@ -312,6 +312,15 @@ form {
     grid-area: add-book-div;
 }
 
+#add-book {
+    cursor: pointer;
+    background: none;
+    border: none;
+    border-radius: 50px;
+}
+
+
+
 .logo img {
     width: 80px;
     border-radius: 50px;

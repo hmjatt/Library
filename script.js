@@ -157,3 +157,20 @@ Array.from(addNotesBtn).forEach((addBtn) => {
   });
 });
 
+
+// code to add a book
+
+const addBook= document.getElementById("add-book");
+
+addBook.addEventListener("click", function() {
+  let theForm = addBook.nextSibling.nextSibling;
+
+  console.log(addBook, theForm);
+
+  theForm.classList.toggle("hide");
+  theForm.classList.toggle("show");
+
+  // document.getElementById("form1").style.visibility = "visible";
+  
+});
+
