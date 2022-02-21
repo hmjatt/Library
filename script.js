@@ -41,12 +41,12 @@
 
 // load page 2 on click of button 
 
-const getStartedButton = document.getElementById("get-started-button");
+// const getStartedButton = document.getElementById("get-started-button");
 
 
-getStartedButton.addEventListener("click", function() {
-  window.location.href='/page-2.html';
-});
+// getStartedButton.addEventListener("click", function() {
+//   window.location.href='/page-2.html';
+// });
 
 
 // onclick="window.location.href='/page-2.html';
