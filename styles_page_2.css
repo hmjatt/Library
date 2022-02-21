@@ -1,4 +1,4 @@
-
+/* CSS for Page_2 Dark theme */
 
 html {
     background-color: #3f3b51;
@@ -11,35 +11,30 @@ html {
 body {
     display: flex;
     justify-content: center;
-    /* padding: 130px 20px 20px 20px; */
+   
 }
 
 
 .container-div {
-    height: 95vh;
     width: 90vw;
     border-radius:40px;
     background-color: #231f20;
-    /* display: flex;
-    justify-content: center; */
     padding: 20px 70px;
     box-shadow: 5px 20px 25px #00000050;
 }
 
 .page-2 {
     display: grid;
-    /* grid-column-gap: 20px; */
-    height: 92vh;
-    grid-template-columns: auto;
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto;
     grid-template-areas: 
       "heading-div heading-div heading-div"
       "filter-div filter-div filter-div"
       "books-div books-div books-div"
       ". add-book-div ."
-    
       ;
 }
+
 
 
 h1 {
@@ -160,15 +155,16 @@ p, label {
 
 
 .books-div {
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 50px;
+    grid-auto-rows: auto;
     grid-area: books-div;
 
 }
 
 .book {
-    width: 23vw;
-    
+    width: 25vw;
     background-color: #413f40;
     border-radius: 15px;
     display: flex;
@@ -263,7 +259,6 @@ input[type="checkbox"] {
 
 .notes-div button:hover {
     background-color: rgb(255, 219, 122);
-
 }
 
 .notes-div input {
@@ -317,9 +312,6 @@ form {
     grid-area: add-book-div;
 }
 
-
-
-
 .logo img {
     width: 80px;
     border-radius: 50px;
@@ -346,13 +338,7 @@ form {
     border-radius: 4px;
     font-size: 16px;
     background-color: white;
-
-    /* padding: 12px 20px 16px 60px; */
     border: 3px solid #ccc;
     transition: 0.5s;
     outline: none;
 }
-
-
-
-

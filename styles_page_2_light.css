@@ -1,9 +1,8 @@
-
+/* CSS for Page_2 Light theme */
 
 html {
     background-color: #e2e2e2;
     font-family: 'Quicksand', sans-serif;
-    height: 90vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -12,24 +11,20 @@ html {
 body {
     display: flex;
     justify-content: center;
-    padding: 150px 20px 20px 20px;
 }
 
 
 .container-div {
-    height: 90vh;
     width: 90vw;
     border-radius:40px;
     background-color: #fff7eb;
-
     padding: 20px 70px;
     box-shadow: 5px 20px 25px #00000050;
 }
 
 .page-2 {
     display: grid;
-
-    grid-template-columns: auto;
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto;
     grid-template-areas: 
       "heading-div heading-div heading-div"
@@ -163,15 +158,15 @@ p, label {
 
 
 .books-div {
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 50px;
+    grid-auto-rows: auto;
     grid-area: books-div;
-
 }
 
 .book {
-    width: 23vw;
-    
+    width: 25vw;
     background-color: #9bd3dd;
     border-radius: 15px;
     display: flex;
@@ -261,7 +256,6 @@ input[type="checkbox"] {
 
 .notes-div button:hover {
     background-color: rgb(255, 219, 122);
-
 }
 
 .notes-div input {
@@ -314,8 +308,6 @@ form {
 }
 
 
-
-
 .logo img {
     width: 80px;
     border-radius: 50px;
@@ -335,7 +327,15 @@ form {
     width: 96px;
 }
 
-
-
-
+.note-input {
+    font-family: 'Quicksand', sans-serif;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    border: 3px solid #ccc;
+    transition: 0.5s;
+    outline: none;
+}
 
