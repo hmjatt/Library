@@ -97,41 +97,59 @@ Array.from(favBtn).forEach((el) => {
     // Do stuff here
     
         el.addEventListener("click", function() {
-            let favBook = el.parentElement.parentElement;
-            console.log(favBook.className);
+            let favBook = el.parentElement.parentElement.parentElement;
+            // console.log(favBook.className);
             
-        if (favBook.className == "image-div") {
+        if (favBook.className == "book") {
             // ... then add "fav" to it
-            favBook.className = "image-div fav";
+            favBook.className = "book fav";
+            favBook.id = "favBook";
           // Otherwise...
           } else {
             // ... switch it to "light-theme.css"
-            favBook.className = "image-div";
+            favBook.className = "book";
           }
     });
 });
 
 
-// code to filter all books or favorite books 
-
-// const filterAllBtn = document.getElementById("all-link");
-// const filterFavBtn = document.getElementById("favorite-link");
 
 
-// Array.from(favEle).forEach((ele) => {
-//     ele.addEventListener("click", function() {
-//         console.log('fav',);
-//     });
 
-// });
 
-// filterFavBtn.addEventListener("click", function() {
-//     console.log('fav',);
-// });
+// code to filter favorite books 
 
-// filterAllBtn.addEventListener("click", function() {
-//     console.log('all');
-// });
+const favEle = document.getElementById("favorite-link");
+const favBooks = document.getElementsByClassName("book");
 
-const favEle = document.getElementsByClassName("book");
-console.log(favEle);
+favEle.addEventListener("click", function() {
+    Array.from(favBooks).forEach((ele) => {
+      
+      console.log(ele);
+
+      if(ele.id == "favBook") {
+        // ... then add "fav" to it
+        // favBooks.className = "image-div fav";
+        console.log('yea');
+        ele.style.display = "flex";
+      // Otherwise...
+      } else if(ele.id == "notFav") {
+        // ... switch it to "light-theme.css"
+        console.log('no');
+        ele.style.display = "none";
+      }
+    });
+    
+});
+
+
+// code to filter all books 
+
+const allEle = document.getElementById("all-link");
+
+allEle.addEventListener("click", function() {
+  Array.from(favBooks).forEach((ele) => {
+    ele.style.display = "flex";
+    ele.id = "notFav";
+  });
+});

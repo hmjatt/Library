@@ -245,7 +245,7 @@ input[type="checkbox"] {
 }
 
 .notes-div button {
-    background-color: rgb(255, 197, 36);
+    background-color: orange;
     border: none;
     border-radius: 50px;
     padding: 15px;
