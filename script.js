@@ -39,6 +39,18 @@
 // }
 
 
+// load page 2 on click of button 
+
+const getStartedButton = document.getElementById("get-started-button");
+
+
+getStartedButton.addEventListener("click", function() {
+  window.location.href='/page-2.html';
+});
+
+
+// onclick="window.location.href='/page-2.html';
+
 
 
 
@@ -153,3 +165,17 @@ allEle.addEventListener("click", function() {
     ele.id = "notFav";
   });
 });
+
+
+// code to add notes
+
+const notesBtn = document.getElementsByClassName("notes-btn");
+const text = document.getElementById("popup");
+
+  Array.from(notesBtn).forEach((btn) => {
+    btn.addEventListener("click", function() {
+      text.classList.toggle("hide");
+  text.classList.toggle("show");
+    });
+});
+

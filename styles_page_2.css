@@ -259,6 +259,18 @@ input[type="checkbox"] {
 
 }
 
+form {
+    width: 50%;
+}
+  
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
 .pages-div {
     align-self: center;
     margin: 20px;
