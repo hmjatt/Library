@@ -176,10 +176,20 @@ addBook.addEventListener("click", function() {
 
 //code to cancel form and hide/delete book
 
-const cancelBtn = document.getElementById("remove-form-btn");
+const cancelForm = document.getElementById("remove-form-btn");
+const cancelBook = document.getElementsByClassName("remove-book-class");
 
-cancelBtn.addEventListener("click", function() {
+cancelForm.addEventListener("click", function() {
   formDiv.className = "noShow";
-
 });
+
+Array.from(cancelBook).forEach((rmvBook) => {
+  rmvBook.addEventListener("click", function() {
+    let removeBook = rmvBook.parentElement.parentElement.parentElement;
+    removeBook.className = "noShow";
+    console.log(removeBook);
+  });
+});
+
+
 

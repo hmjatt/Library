@@ -17,8 +17,10 @@ body {
 
 .container-div {
     width: 90vw;
+    min-height: 95vh;
     border-radius:40px;
     background-color: #231f20;
+    margin-bottom: 20px;
     padding: 20px 70px;
     box-shadow: 5px 20px 25px #00000050;
 }
@@ -47,6 +49,7 @@ h2 {
     color: rgb(255, 250, 219);
     text-align: center;
     font-size: 30px;
+    max-width: 400px;
 }
 
 h3 {
@@ -168,6 +171,23 @@ p, label {
     border-radius: 15px;
     display: flex;
     justify-content: center;
+}
+
+#remove-book {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#remove-book-btn {
+    margin: -15px -40px 0px 0px;
+    position: absolute;
+    background: none;
+    padding: 0px;
+    border: none;
+}
+
+#remove-book img {
+    width: 40px;
 }
 
 .image-div {
@@ -322,7 +342,7 @@ form {
     justify-content: center;
     margin: 50px;
     top: 85%;
-    left: 80%;
+    left: 85%;
     grid-area: add-book-div;
 }
 
@@ -390,6 +410,7 @@ form {
     background: none;
     border: none;
     cursor: pointer;
+    padding: 0px;
 }
 
 #form-div {
@@ -399,8 +420,8 @@ form {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #016faf98;
-    backdrop-filter: blur(30px);
+    background-color: #016faf67;
+    backdrop-filter: blur(50px);
     border-radius: 20px;
     height: 600px;
     width: 650px;
