@@ -109,7 +109,7 @@
 
                         <div class="notes-div">
                             <button class="notes-btn">Take Notes</button>
-                            <input type="text" name="popup" class="hide">
+                            <input type="text" name="popup"  class="hide note-input">
                             <button class="hide add-notes-btn">Add</button>
                             <p class="note-para"></p>
                         </div>
@@ -141,7 +141,7 @@
 
                         <div class="notes-div">
                             <button class="notes-btn">Take Notes</button>
-                            <input type="text" name="popup" class="hide">
+                            <input type="text" name="popup"  class="hide note-input">
                             <button class="hide add-notes-btn">Add</button>
                             <p class="note-para"></p>
                         </div>
@@ -176,7 +176,7 @@
 
                         <div class="notes-div">
                             <button class="notes-btn">Take Notes</button>
-                            <input type="text" name="popup" class="hide">
+                            <input type="text" name="popup"  class="hide note-input">
                             <button class="hide add-notes-btn">Add</button>
                             <p class="note-para"></p>
                         </div>
@@ -202,51 +202,58 @@
 
             <div class="add-book-div">
                 <button id="add-book"><img src="images/svgs/add-svg.svg" alt="add-book"></button>
-                <div id = "form1" class="hide">
-                    <form action="#" method="get">
+                <div id="form-div" class="hide">
+                    <form id="form-ele" action="#" method="get">
                             
                         <div class="form-bg">
 
-                            <div class="first-last-name">
-                                <div class="spacing">
-                                    <div><label for="first_name">First Name:</label></div>
-                                    <div><input type="text" name="first_name" id="first_name" placeholder="John"></div>
-                                </div>
-                                <div class="spacing">
-                                    <div><label for="last_name">Last Name:</label></div>
-                                    <div><input type="text" name="last_name" id="last_name" placeholder="Doe"></div>
-                                </div>
+                            <div id="remove-form">
+                                <button id="remove-form-btn" type="button"><img src="images/cancel.png" alt="cancel"></button>
                             </div>
-                            <div class="email-phone">
+
                                 <div class="spacing">
-                                    <div><label for="email">Email:</label></div>
-                                    <div><input type="email" id="email" name="email" placeholder="example@example.com"></div>
+                                    <div class="label-div"><label for="title">Title</label></div>
+                                    <div><input type="text" name="title" id="title" required></div>
                                 </div>
+
                                 <div class="spacing">
-                                    <div><label for="phone_number">Phone Number:</label></div>
-                                    <div><input type="tel" id="phone_number" name="phone_number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890"></div>
+                                    <div class="label-div"><label for="author">Author</label></div>
+                                    <div><input type="text" name="author" id="last_name" required></div>
                                 </div>
+
+                                <div class="spacing">
+                                    <div class="label-div"><label for="pages">Pages</label></div>
+                                    <div><input type="number" id="pages-inp" name="pages" min="1" required></div>
+                                </div>
+
+                                <div class="spacing">
+                                    <div class="label-div"><label for="url">Book Cover URL</label></div>
+                                    <div>
+                                        <input type="url" name="url" id="url"placeholder="https://example.com"
+                                            pattern="https://.*">
+                                    </div>
+                                </div>
+
+                                <div class="spacing">
+                                    <div class="add-read-div">
+                                        <label class="read-container">Read
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+                                </div>
+
                             </div>
-                            
                         
-                            <div class="pass-confirm">
-                                <div class="spacing">
-                                    <div><label for="user_password">*Password:</label></div>
-                                    <div><input type="password" id="user_password" name="user_password" required></div>
-                                </div>
-                                <div class="spacing">
-                                    <div><label for="user_password_confirm">*Confirm Password:</label></div>
-                                    <div><input type="password" id="user_password_confirm" name="user_password_confirm" required></div>
-                                </div>
+                            <div class="form-sbmt">
+                                <button type="submit">Add Book</button>
                             </div>
 
                         </div>
         
                         
 
-                        <div>
-                            <button type="submit">Create Account</button>
-                        </div>
+                        
                     </form>
                 </div>
             </div>

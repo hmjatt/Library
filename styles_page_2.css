@@ -107,14 +107,13 @@ p, label {
     background-position: 10px 10px; 
     padding: 12px 20px 16px 60px;
     background-repeat: no-repeat;
-    border: 3px solid #ccc;
     transition: 0.5s;
     outline: none;
 }
 
 #search-item:focus {
     border: 3px solid #2f88ff;
-  }
+}
 
 
 
@@ -279,6 +278,18 @@ form {
     display: block;
 }
 
+.note-input {
+    font-family: 'Quicksand', sans-serif;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    border: 3px solid #ccc;
+    transition: 0.5s;
+    outline: none;
+}
+
 /* for notes */
 
 
@@ -307,9 +318,59 @@ form {
 
 .add-book-div {
     display: flex;
+    position:fixed;
     justify-content: center;
     margin: 50px;
+    top: 85%;
+    left: 80%;
     grid-area: add-book-div;
+}
+
+.add-book-div label {
+    color: aliceblue;
+    font-weight: 600;
+    font-size: 32px;
+}
+
+/* style for custom form input */
+
+.add-book-div input {
+    color: rgb(22, 22, 22);
+    font-weight: 500;
+    font-size: 24px;
+    width: 400px;   
+    font-family: 'Quicksand', sans-serif;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: white;
+    /* padding: 12px 20px 16px 60px; */
+    border: 3px solid #ccc;
+    transition: 0.5s;
+    outline: none;
+}
+
+.add-book-div input:focus {
+    border: 3px solid #ff932e;
+}
+
+/* style for custom form input */
+
+
+.add-read-div, .label-div {
+    align-self: center;
+    padding: 40px 0px 5px 0px;
+}
+
+.add-read-div {
+    padding: 40px 40px 5px 0px;    
+
+}  
+
+.spacing {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 #add-book {
@@ -319,6 +380,63 @@ form {
     border-radius: 50px;
 }
 
+#remove-form {
+    position: absolute;
+    top: 5%;
+    left: 85%;
+}
+
+#remove-form-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+#form-div {
+    padding: 30px;
+    justify-content: center;
+    position:fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #016faf98;
+    backdrop-filter: blur(30px);
+    border-radius: 20px;
+    height: 600px;
+    width: 650px;
+}
+
+.noShow {
+    display: none;
+}
+
+.showIt {
+    display: flex;
+    position: fixed;
+}
+
+#form-ele {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-bg, .form-sbmt {
+    align-self: center;
+}
+
+.form-sbmt button {
+    border: none;
+    color: rgb(22, 22, 22);
+    font-weight: 500;
+    font-size: 32px;
+    border-radius: 50px;
+    padding: 10px 0px;
+    width: 200px;
+    margin: 30px 0px 40px 0px;
+    font-family: 'Quicksand', sans-serif;
+    background-color: orange;
+}
 
 
 .logo img {
@@ -337,17 +455,10 @@ form {
 }
 
 .add-book-div img {
-    width: 96px;
+    width: 80px;
 }
 
-.note-input {
-    font-family: 'Quicksand', sans-serif;
-    box-sizing: border-box;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    background-color: white;
-    border: 3px solid #ccc;
-    transition: 0.5s;
-    outline: none;
+#remove-form-btn img {
+    width: 40px;
 }
+

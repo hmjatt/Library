@@ -161,16 +161,25 @@ Array.from(addNotesBtn).forEach((addBtn) => {
 // code to add a book
 
 const addBook= document.getElementById("add-book");
+const formDiv = document.getElementById("form-div");
+const htmlEle = document.getElementsByTagName("html");
 
 addBook.addEventListener("click", function() {
-  let theForm = addBook.nextSibling.nextSibling;
 
-  console.log(addBook, theForm);
-
-  theForm.classList.toggle("hide");
-  theForm.classList.toggle("show");
-
-  // document.getElementById("form1").style.visibility = "visible";
   
+
+  formDiv.classList.toggle("noShow");
+  formDiv.classList.toggle("showIt");
+  
+});
+
+
+//code to cancel form and hide/delete book
+
+const cancelBtn = document.getElementById("remove-form-btn");
+
+cancelBtn.addEventListener("click", function() {
+  formDiv.className = "noShow";
+
 });
 
