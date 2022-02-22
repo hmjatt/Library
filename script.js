@@ -194,7 +194,26 @@ function addBookToApp(title, author, pages, url, read) {
     this.author = author;
     this.pages = pages;
     this.url = url;
-    this.read = read;
+    this.read = function getReadState() {
+        readInput.addEventListener("change", function() {
+    
+            //     (readInput.value == "checked") ? readInput.value = "unchecked"
+            // :    readInput.value = "checked";
+                // // (checked == "false") ?  
+                
+                if(readInput.checked == true) {
+                    checkedVar = "checked";
+                    // readInput = "checked";
+                    
+                } else {
+                    // readInput.checked == false;
+                    checkedVar = "a";
+                }
+            
+                
+                 return checkedVar;
+            });
+    };
 }
 
 //setting Book constructor as protype of Function that creates book objects
@@ -217,6 +236,8 @@ addBookForm.addEventListener("submit", function(ele) {
     //run a function that create a new book card
     addBookCard();
 
+    getReadState();
+
     //clear the array
     // bookArr = [];
     // console.log(bookCard, bookArr);
@@ -226,26 +247,11 @@ addBookForm.addEventListener("submit", function(ele) {
 //Event that changes value/state of book to read/checked or not read/unchecked
 
 
-let checkedVar = "a";
 
-readInput.addEventListener("click", function() {
 
-//     (readInput.value == "checked") ? readInput.value = "unchecked"
-// :    readInput.value = "checked";
-    // // (checked == "false") ?  
-    
-    if(checkedVar == "a") {
-        checkedVar = "checked";
-        // readInput = "checked";
-        
-    } else {
-        // readInput.checked == false;
-        checkedVar = "a";
-    }
 
-    
-     return checkedVar;
-});
+
+
 
 
 //function that loops through each array item and create a new book card
@@ -333,7 +339,7 @@ function addBookCard() {
 
 // bookArr.forEach(ele =>  booksDiv.appendChild(bookArr[ele]));
     
-bookArr.forEach(ele =>  console.log(ele.title));
+bookArr.forEach(ele =>  console.log(ele.title, ele.author, ele.pages, ele.url, checkedVar));
     // `<div class="book" class="notFav" class="hide">
     //     <div class="image-div">
 
