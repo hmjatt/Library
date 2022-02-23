@@ -147,7 +147,7 @@ addBook.addEventListener("click", function () {
     formDiv.classList.toggle("showIt");
 });
 
-//code to cancel form and hide/delete book
+//code to cancel form and hide/delete book (needs fixing)
 
 const cancelForm = document.getElementById("remove-form-btn");
 const cancelBook = document.getElementsByClassName("remove-book-class");
@@ -225,15 +225,17 @@ addBookForm.addEventListener("submit", function(ele) {
 
 //function that loops through each array item and create a new book card
 const booksDiv = document.getElementById("books-div-id");
+const bookCardEle = document.createElement("div");
 
+// bookCardEle.className = "book notFav hide";
 
 
 function addBookCard() {
     
     bookArr.forEach( function(eles) {
 
-        let bookTemplate = 
-        `<div class="book" class="notFav" class="hide">
+        bookCardEle.innerHTML = 
+      `  <div class="book" class="notFav" class="hide">
             <div class="image-div">
         
                 <div id="remove-book">
@@ -252,7 +254,7 @@ function addBookCard() {
                 </div>
         
                 <div class="pages-div">
-                    <p>Pages: ${eles.url}</p>
+                    <p>Pages: ${eles.pages}</p>
                 </div>
         
                 <div class="fav-svg-div">
@@ -263,10 +265,44 @@ function addBookCard() {
         
             </div>
 
-        </div>`;
+        </div>`
+        ;
 
-        booksDiv.innerHTML = bookTemplate;
-        console.log(typeof(bookTemplate));
+        // let bookTemplate = 
+        // `<div class="book" class="notFav" class="hide">
+        //     <div class="image-div">
+        
+        //         <div id="remove-book">
+        //             <button id="remove-book-btn" class="remove-book-class" type="button"><img src="images/cancel.png" alt="cancel"></button>
+        //         </div>
+        
+        //         <h2>${eles.title}</h2>
+        //         <h3>${eles.author}</h3>
+        //         <img class="book-cover" src="${eles.url}" alt="data-structures">
+        
+        //         <div class="notes-div">
+        //             <button class="notes-btn">Take Notes</button>
+        //             <input type="text" name="popup"  class="hide note-input">
+        //             <button class="hide add-notes-btn">Add</button>
+        //             <p class="note-para"></p>
+        //         </div>
+        
+        //         <div class="pages-div">
+        //             <p>Pages: ${eles.url}</p>
+        //         </div>
+        
+        //         <div class="fav-svg-div">
+        //             <button class="fav-btn">
+        //                 <img class="fav-svg" src="images/svgs/star-svg.svg" alt="add-favorite">
+        //             </button>
+        //         </div>
+        
+        //     </div>
+
+        // </div>`;
+
+        booksDiv.appendChild(bookCardEle);
+        // console.log(typeof(eles));
         
     });
 }
