@@ -171,7 +171,7 @@ const titleInput = document.getElementById("title-input");
 const authorInput = document.getElementById("author-input");
 const pagesInput = document.getElementById("pages-input");
 const urlInput = document.getElementById("url-input");
-const readInput = document.getElementById("read-input");
+// const readInput = document.getElementById("read-input");
 
 
 
@@ -188,32 +188,12 @@ function BookConstr() {
 }
 
 // Function to create book objects
-function addBookToApp(title, author, pages, url, read) {
+function addBookToApp(title, author, pages, url) {
     // do something
     this.title = title;
     this.author = author;
     this.pages = pages;
     this.url = url;
-    this.read = function getReadState() {
-        readInput.addEventListener("change", function() {
-    
-            //     (readInput.value == "checked") ? readInput.value = "unchecked"
-            // :    readInput.value = "checked";
-                // // (checked == "false") ?  
-                
-                if(readInput.checked == true) {
-                    checkedVar = "checked";
-                    // readInput = "checked";
-                    
-                } else {
-                    // readInput.checked == false;
-                    checkedVar = "a";
-                }
-            
-                
-                 return checkedVar;
-            });
-    };
 }
 
 //setting Book constructor as protype of Function that creates book objects
@@ -228,157 +208,65 @@ addBookForm.addEventListener("submit", function(ele) {
     ele.preventDefault();
 
     //create bookCard object
-    const bookCard = new addBookToApp(titleInput.value, authorInput.value, pagesInput.value, urlInput.value, readInput.checked);
+    const bookCard = new addBookToApp(titleInput.value, authorInput.value, pagesInput.value, urlInput.value);
     
     // push object to array
     bookArr.push(bookCard);
 
+
     //run a function that create a new book card
     addBookCard();
+    
 
-    getReadState();
-
-    //clear the array
-    // bookArr = [];
-    // console.log(bookCard, bookArr);
 });
-
-
-//Event that changes value/state of book to read/checked or not read/unchecked
-
-
-
-
-
 
 
 
 
 //function that loops through each array item and create a new book card
-
 const booksDiv = document.getElementById("books-div-id");
 
+
+
 function addBookCard() {
-    let bookTemplate = `<div class="book" class="notFav" class="hide">
-    <div class="image-div">
-
-        <div id="remove-book">
-            <button id="remove-book-btn" class="remove-book-class" type="button"><img src="images/cancel.png" alt="cancel"></button>
-        </div>
-
-        <h2>${titleInput.value}</h2>
-        <h3>${authorInput.value}</h3>
-        <img class="book-cover" src="${urlInput.value}" alt="data-structures">
-        
-        <div class="read-div">
-            <label class="read-container">Read
-                <input type="checkbox" ${checkedVar}>
-                <span class="checkmark"></span>
-            </label>
-        </div>
-
-        <div class="notes-div">
-            <button class="notes-btn">Take Notes</button>
-            <input type="text" name="popup"  class="hide note-input">
-            <button class="hide add-notes-btn">Add</button>
-            <p class="note-para"></p>
-        </div>
-
-        <div class="pages-div">
-            <p>Pages: ${pagesInput.value}</p>
-        </div>
-
-        <div class="fav-svg-div">
-            <button class="fav-btn">
-                <img class="fav-svg" src="images/svgs/star-svg.svg" alt="add-favorite">
-            </button>
-        </div>
-
-    </div>
-
-</div>`;
-
-//     bookArr.forEach(ele =>  booksDiv.innerHTML = `<div class="book" class="notFav" class="hide">
-//     <div class="image-div">
-
-//         <div id="remove-book">
-//             <button id="remove-book-btn" class="remove-book-class" type="button"><img src="images/cancel.png" alt="cancel"></button>
-//         </div>
-
-//         <h2>${ele.title}</h2>
-//         <h3>${ele.author}</h3>
-//         <img class="book-cover" src="${ele.url}" alt="data-structures">
-        
-//         <div class="read-div">
-//             <label class="read-container">Read
-//                 <input type="checkbox" ${checkedVar}>
-//                 <span class="checkmark"></span>
-//             </label>
-//         </div>
-
-//         <div class="notes-div">
-//             <button class="notes-btn">Take Notes</button>
-//             <input type="text" name="popup"  class="hide note-input">
-//             <button class="hide add-notes-btn">Add</button>
-//             <p class="note-para"></p>
-//         </div>
-
-//         <div class="pages-div">
-//             <p>Pages: ${ele.pages}</p>
-//         </div>
-
-//         <div class="fav-svg-div">
-//             <button class="fav-btn">
-//                 <img class="fav-svg" src="images/svgs/star-svg.svg" alt="add-favorite">
-//             </button>
-//         </div>
-
-//     </div>
-
-// </div>`);
-
-// bookArr.forEach(ele =>  booksDiv.appendChild(bookArr[ele]));
     
-bookArr.forEach(ele =>  console.log(ele.title, ele.author, ele.pages, ele.url, checkedVar));
-    // `<div class="book" class="notFav" class="hide">
-    //     <div class="image-div">
+    bookArr.forEach( function(eles) {
 
-    //         <div id="remove-book">
-    //             <button id="remove-book-btn" class="remove-book-class" type="button"><img src="images/cancel.png" alt="cancel"></button>
-    //         </div>
+        let bookTemplate = 
+        `<div class="book" class="notFav" class="hide">
+            <div class="image-div">
+        
+                <div id="remove-book">
+                    <button id="remove-book-btn" class="remove-book-class" type="button"><img src="images/cancel.png" alt="cancel"></button>
+                </div>
+        
+                <h2>${eles.title}</h2>
+                <h3>${eles.author}</h3>
+                <img class="book-cover" src="${eles.url}" alt="data-structures">
+        
+                <div class="notes-div">
+                    <button class="notes-btn">Take Notes</button>
+                    <input type="text" name="popup"  class="hide note-input">
+                    <button class="hide add-notes-btn">Add</button>
+                    <p class="note-para"></p>
+                </div>
+        
+                <div class="pages-div">
+                    <p>Pages: ${eles.url}</p>
+                </div>
+        
+                <div class="fav-svg-div">
+                    <button class="fav-btn">
+                        <img class="fav-svg" src="images/svgs/star-svg.svg" alt="add-favorite">
+                    </button>
+                </div>
+        
+            </div>
 
-    //         <h2>${ele.title}</h2>
-    //         <h3>${ele.author}</h3>
-    //         <img class="book-cover" src="${ele.url}" alt="data-structures">
-            
-    //         <div class="read-div">
-    //             <label class="read-container">Read
-    //                 <input type="checkbox" ${checkedVar}>
-    //                 <span class="checkmark"></span>
-    //             </label>
-    //         </div>
+        </div>`;
 
-    //         <div class="notes-div">
-    //             <button class="notes-btn">Take Notes</button>
-    //             <input type="text" name="popup"  class="hide note-input">
-    //             <button class="hide add-notes-btn">Add</button>
-    //             <p class="note-para"></p>
-    //         </div>
-
-    //         <div class="pages-div">
-    //             <p>Pages: ${ele.pages}</p>
-    //         </div>
-
-    //         <div class="fav-svg-div">
-    //             <button class="fav-btn">
-    //                 <img class="fav-svg" src="images/svgs/star-svg.svg" alt="add-favorite">
-    //             </button>
-    //         </div>
-
-    //     </div>
-
-    // </div>`);
-
-    // bookArr.forEach(ele => booksDiv.innerHTML = ele);
-    // booksDiv.innerHTML = bookTemplate;
+        booksDiv.innerHTML = bookTemplate;
+        console.log(typeof(bookTemplate));
+        
+    });
 }

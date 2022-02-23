@@ -377,15 +377,15 @@ form {
 /* style for custom form input */
 
 
-.add-read-div, .label-div {
+.label-div {
     align-self: center;
     padding: 40px 0px 5px 0px;
 }
 
-.add-read-div {
+/* .add-read-div {
     padding: 40px 40px 5px 0px;    
 
-}  
+}   */
 
 .spacing {
     display: flex;
