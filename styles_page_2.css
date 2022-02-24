@@ -160,6 +160,7 @@ p, label {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     row-gap: 50px;
+    column-gap: 10px;
     grid-auto-rows: auto;
     grid-area: books-div;
 
