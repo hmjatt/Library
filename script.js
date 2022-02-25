@@ -43,12 +43,12 @@ themeBtn.addEventListener("click", function () {
 
 
 
-document.body.addEventListener( 'click', function ( event ) {
-    if( event.target.className == 'fav-btn' ) {
-                          console.log("aaaa");
-;
+document.body.addEventListener('click', function (event) {
+    if (event.target.className == 'fav-btn') {
+        console.log("aaaa");
+        ;
     };
-  } );
+});
 
 
 // code to filter favorite books
@@ -62,10 +62,10 @@ favEle.addEventListener("click", function () {
         if (ele.className == "book fav favBook") {
             // ... then add "fav" to it
             console.log("yay");
-            
+
             ele.style.display = "flex";
         }
-            // Otherwise...
+        // Otherwise...
         // } else if (ele.className == "book") {
         //     // ... switch it to "light-theme.css"
         //     console.log("nay");
@@ -189,13 +189,13 @@ addBookToApp.prototype = Object.create(BookConstr);
 //create bookCard object using Function that creates book objects when form is submitted
 //After submitting form, push created object to Book Array and create a new book card
 const addBookForm = document.getElementById("form-ele");
-addBookForm.addEventListener("submit", function(ele) {
+addBookForm.addEventListener("submit", function (ele) {
 
     ele.preventDefault();
 
     //create bookCard object
     const bookCard = new addBookToApp(titleInput.value, authorInput.value, pagesInput.value, urlInput.value);
-    
+
     // push object to array
     bookArr.push(bookCard);
 
@@ -203,7 +203,7 @@ addBookForm.addEventListener("submit", function(ele) {
 
     //run a function that create a new book card
     addBookCard();
-    
+
     bookArr = [];
 
 });
@@ -216,84 +216,201 @@ const booksDiv = document.getElementById("books-div-id");
 // const favSvgDiv = document.getElementsByClassName("fav-svg-div");
 const bookCardEle = document.createElement("div");
 
-const favSvgDiv = document.createElement("div");
-
-//adding class/ child elements to favSvgDiv
-favSvgDiv.classList = "fav-svg-div";
-
-const favBtnEle = document.createElement("button");
-favBtnEle.classList = "fav-btn";
-
-const favBtnSvg = document.createElement("img");
-favBtnSvg.classList = "fav-svg";
-favBtnSvg.alt = "add-favorite";
-favBtnSvg.src = "images/svgs/star-svg.svg";
-
-//put img inside button
-favBtnEle.appendChild(favBtnSvg);
-
-//put button inside div
-favSvgDiv.appendChild(favBtnSvg);
 
 
-//put fav div inside book
-
-
-// <div class="fav-svg-div">
-//                     <button class="fav-btn">
-//                         <img class="fav-svg" src="images/svgs/star-svg.svg" alt="add-favorite">
-//                     </button>
-//                 </div>
 
 
 function addBookCard() {
-    bookArr.forEach( function(eles) {
+    bookArr.forEach(function (eles) {
 
-        booksDiv.innerHTML = " ";
+        //create book div element
+        const bookDivEle = document.createElement("div");
+        bookDivEle.classList = "book notFav hide";
+
+
+
+        //create image div
+        const imageDivEle = document.createElement("div");
+        imageDivEle.classList = "image-div";
+
+
+
+
+        //create remove book element
+        const removeBookDiv = document.createElement("div");
+        const removeBookButton = document.createElement("button");
+        const removeBookImg = document.createElement("img");
+
+
+        //add attributes to removebook elements
+        removeBookDiv.id = "remove-book";
+        removeBookButton.classList = "remove-book-class";
+        removeBookButton.id = "remove-book-btn";
+        removeBookButton.type = "button";
+        removeBookImg.src = "images/cancel.png";
+        removeBookImg.alt = "cancel";
+
+        // append elements to remove book div 
+        removeBookButton.appendChild(removeBookImg);
+        removeBookDiv.appendChild(removeBookButton);
+
+        // append remove-book div to image div
+        imageDivEle.appendChild(removeBookDiv);
+
+
+
+        //create title and author and url elements
+        const titleEle = document.createElement("h2");
+        const authorEle = document.createElement("h3");
+        const urlEle = document.createElement("img");
+
+        let titleData = eles.title;
+        let authorData = eles.author;
+        let urlData = eles.url;
+
+        urlEle.classList = "book-cover";
+        urlEle.src = urlData;
+        urlEle.alt = "data-structures";
+
+        //append data to elements
+        titleEle.append(titleData);
+        authorEle.append(authorData);
+        // urlEle.appendChild(urlData);
+
+        // append title and author and url elements to image div
+        imageDivEle.appendChild(titleEle);
+        imageDivEle.appendChild(authorEle);
+        imageDivEle.appendChild(urlEle);
+
+
+
+
+        //creating notes div
+        const notesDiv = document.createElement("div");
+        notesDiv.classList = "notes-div";
+
+        //creating button
+        const notesButton = document.createElement("button");
+        notesButton.classList = "notes-btn";
+        notesButton.innerHTML = "Take Notes"
+
+        //create input for notes
+        const notesInput = document.createElement("input");
+        notesInput.type = "text";
+        notesInput.name = "popup";
+        notesInput.classList = "hide note-input";
+
+        //create Add button
+        const addButton = document.createElement("button");
+        addButton.classList = "hide add-notes-btn";
+        addButton.innerHTML = "Add";
+
+        //create notes para
+        const notesP = document.createElement("p");
+        notesP.classList = "note-para";
+
+        //append all elements inside notes-div
+        notesDiv.appendChild(notesButton);
+        notesDiv.appendChild(notesInput);
+        notesDiv.appendChild(addButton);
+        notesDiv.appendChild(notesP);
+
+        //put notes div inside image div
+        imageDivEle.appendChild(notesDiv);
+
+
+        //creating pages div
+        const pagesDiv = document.createElement("div");
+
+        //add class to pages div
+        pagesDiv.classList = "pages-div";
+
+        //create <p> for pages div
+        const pagesPara = document.createElement("p");
+
+        //content inside <p>
+        pagesPara.innerHTML = "Pages: ";
+        let pData = eles.pages;
+
+        //insert content inside <p>
+        // pagesPara.appendChild(pText);
+        pagesPara.append(pData);
+
+        //insert <p> inside pages div
+        pagesDiv.appendChild(pagesPara);
+
+        //put pages div inside image div
+        imageDivEle.appendChild(pagesDiv);
+
+
+
+
+        //creating favorite div 
+        const favSvgDiv = document.createElement("div");
+
+        //adding class/ child elements to favSvgDiv
+        favSvgDiv.classList = "fav-svg-div";
+
+        const favBtnEle = document.createElement("button");
+        favBtnEle.classList = "fav-btn";
+
+        const favBtnSvg = document.createElement("img");
+        favBtnSvg.classList = "fav-svg";
+        favBtnSvg.alt = "add-favorite";
+        favBtnSvg.src = "images/svgs/star-svg.svg";
+
+        //put img inside button
+        favBtnEle.appendChild(favBtnSvg);
+
+        //put button inside div
+        favSvgDiv.appendChild(favBtnSvg);
+
+
+        //put fav div inside book after image div
+        imageDivEle.appendChild(favSvgDiv);
+
+
+        // put image div inside book div
+        bookDivEle.appendChild(imageDivEle);
+
 
         //adding class and id to book element
-        bookCardEle.classList = "books-div";
-        bookCardEle.id = "books-div-id";
+
 
         //adding class and id to fav button
         // favBtnEle.classList = "fav-btn";
 
-        bookCardEle.innerHTML += 
-      `  <div class="book" class="notFav" class="hide">
-            <div class="image-div">
-        
-                <div id="remove-book">
-                    <button id="remove-book-btn" class="remove-book-class" type="button"><img src="images/cancel.png" alt="cancel"></button>
-                </div>
-        
-                <h2>${eles.title}</h2>
-                <h3>${eles.author}</h3>
-                <img class="book-cover" src="${eles.url}" alt="data-structures">
-        
-                <div class="notes-div">
-                    <button class="notes-btn">Take Notes</button>
-                    <input type="text" name="popup"  class="hide note-input">
-                    <button class="hide add-notes-btn">Add</button>
-                    <p class="note-para"></p>
-                </div>
-        
-                <div class="pages-div">
-                    <p>Pages: ${eles.pages}</p>
-                </div>
-        
-                
-        
-            </div>
+        //     bookCardEle.innerHTML += 
+        //   `  <div class="book" class="notFav" class="hide">
+        //         <div class="image-div">
 
-        </div>`
-        ;
+        //             <div id="remove-book">
+        //                 <button id="remove-book-btn" class="remove-book-class" type="button"><img src="images/cancel.png" alt="cancel"></button>
+        //             </div>
+
+        //             <h2>${eles.title}</h2>
+        //             <h3>${eles.author}</h3>
+        //             <img class="book-cover" src="${eles.url}" alt="data-structures">
+
+        //             <div class="notes-div">
+        //                 <button class="notes-btn">Take Notes</button>
+        //                 <input type="text" name="popup"  class="hide note-input">
+        //                 <button class="hide add-notes-btn">Add</button>
+        //                 <p class="note-para"></p>
+        //             </div>
+
+        //         </div>
+
+        //     </div>`
+        //     ;
 
 
-        booksDiv.appendChild(bookCardEle);
-        console.log(booksDiv.childNodes.childNodes);
+        booksDiv.appendChild(bookDivEle);
+        console.log(booksDiv);
+        // console.log(booksDiv.childNodes.childNodes);
     });
 
-    
+
 }
 
 
@@ -307,7 +424,7 @@ Array.from(favBtn).forEach((el) => {
     el.addEventListener("click", function () {
 
         let favBook = el.parentElement.parentElement.parentElement;
-        
+
         if (favBook.className == "book") {
             // ... then add "favBook" to it
             favBook.classList.remove("notFav");
@@ -315,12 +432,12 @@ Array.from(favBtn).forEach((el) => {
             favBook.classList.add("favBook");
             // Otherwise...
         } else {
-            
+
             favBook.className = "book";
         }
     });
 
- 
+
 });
 
 
@@ -328,60 +445,60 @@ Array.from(favBtn).forEach((el) => {
 // eventlistner on Dynamic elements
 
 
-const favSvg = document.getElementsByClassName("fav-svg");
+// const favSvg = document.getElementsByClassName("fav-svg");
 
 
-Array.from(favSvg).forEach(() => {
-    document.addEventListener("click", function (e) {
+// Array.from(favSvg).forEach(() => {
+//     document.addEventListener("click", function (e) {
 
-        let favBook = e.target.parentElement.parentElement;
+//         let favBook = e.target.parentElement.parentElement;
 
-        if (hasClass(e.target, "fav-svg")) {
-            if (favBook.className == "book") {
-                // ... then add "favBook" to it
-                // favBook.classList.remove("notFav");
-                // favBook.classList.add("fav");
-                // favBook.classList.add("favBook");
-                favBook.classList.toggle("fav favBook");
-                // Otherwise...
-            } else {
-                
-                favBook.classList.toggle("book")
-            }
+//         if (hasClass(e.target, "fav-svg")) {
+//             if (favBook.className == "book") {
+//                 // ... then add "favBook" to it
+//                 // favBook.classList.remove("notFav");
+//                 // favBook.classList.add("fav");
+//                 // favBook.classList.add("favBook");
+//                 favBook.classList.toggle("fav favBook");
+//                 // Otherwise...
+//             } else {
 
-        } 
-        
-    });
-});
+//                 favBook.classList.toggle("book")
+//             }
 
-Array.from(notesBtn).forEach(() => {
-    document.addEventListener("click", function (e) {
+//         }
 
-        let text = e.target.nextSibling.nextSibling;
-        let sbmt = e.target.nextSibling.nextSibling.nextSibling.nextSibling;
+//     });
+// });
 
-        // console.log(text.className, sbmt.className);
+// Array.from(notesBtn).forEach(() => {
+//     document.addEventListener("click", function (e) {
 
-        if (hasClass(e.target, "notes-btn")) {
-            if (text.className == "hide note-input") {
+//         let text = e.target.nextSibling.nextSibling;
+//         let sbmt = e.target.nextSibling.nextSibling.nextSibling.nextSibling;
 
-                text.classList.toggle("show");
+//         // console.log(text.className, sbmt.className);
 
-            }if (sbmt.className == "hide add-notes-btn") {
+//         if (hasClass(e.target, "notes-btn")) {
+//             if (text.className == "hide note-input") {
 
-                sbmt.classList.toggle("show");
+//                 text.classList.toggle("show");
 
-            } 
-      
-        }
-    });
-});
+//             } if (sbmt.className == "hide add-notes-btn") {
 
+//                 sbmt.classList.toggle("show");
 
+//             }
 
+//         }
+//     });
+// });
 
 
 
-function hasClass(elem, className) {
-    return elem.classList.contains(className);
-}
+
+
+
+// function hasClass(elem, className) {
+//     return elem.classList.contains(className);
+// }
