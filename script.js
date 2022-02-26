@@ -42,35 +42,25 @@ themeBtn.addEventListener("click", function () {
 
 
 
-
-document.body.addEventListener('click', function (event) {
-    if (event.target.className == 'fav-btn') {
-        console.log("aaaa");
-        ;
-    };
-});
-
-
 // code to filter favorite books
 
 const favEle = document.getElementById("favorite-link");
-const favBooks = document.getElementsByClassName("book");
+const favBooks = document.getElementsByClassName("book notFav");
+
 
 favEle.addEventListener("click", function () {
     Array.from(favBooks).forEach((ele) => {
-        console.log(ele);
-        if (ele.className == "book fav favBook") {
+        // console.log(ele);
+        if (ele.className == "book favBook") {
             // ... then add "fav" to it
-            console.log("yay");
 
             ele.style.display = "flex";
-        }
+        
         // Otherwise...
-        // } else if (ele.className == "book") {
-        //     // ... switch it to "light-theme.css"
-        //     console.log("nay");
-        //     ele.style.display = "none";
-        // }
+        } else if (ele.className == "book notFav") {
+            // ... switch it to "light-theme.css"
+            ele.style.display = "none";
+        }
     });
 });
 
@@ -89,18 +79,37 @@ allEle.addEventListener("click", function () {
 
 const notesBtn = document.getElementsByClassName("notes-btn");
 
-Array.from(notesBtn).forEach((btn) => {
-    btn.addEventListener("click", function () {
-        let text = btn.nextSibling.nextSibling;
-        let sbmt = btn.nextSibling.nextSibling.nextSibling.nextSibling;
-
-        text.classList.toggle("hide");
-        text.classList.toggle("show");
-
-        sbmt.classList.toggle("hide");
-        sbmt.classList.toggle("show");
+function addNotesFxnContent() {
+    Array.from(notesBtn).forEach((btn) => {
+        btn.addEventListener("click", function () {
+            let text = btn.nextSibling.nextSibling;
+            let sbmt = btn.nextSibling.nextSibling.nextSibling.nextSibling;
+    
+            text.classList.toggle("hide");
+            text.classList.toggle("show");
+    
+            sbmt.classList.toggle("hide");
+            sbmt.classList.toggle("show");
+        });
     });
-});
+}
+
+function addNotesFxn() {
+    Array.from(notesBtn).forEach((btn) => {
+        btn.addEventListener("click", function () {
+            let text = btn.nextSibling.nextSibling;
+            let sbmt = btn.nextSibling;
+    
+            text.classList.toggle("hide");
+            text.classList.toggle("show");
+    
+            sbmt.classList.toggle("hide");
+            sbmt.classList.toggle("show");
+        });
+    });
+}
+
+
 
 // code to show notes on book
 
@@ -108,48 +117,144 @@ const notesPara = document.getElementsByClassName("note-para");
 
 const addNotesBtn = document.getElementsByClassName("add-notes-btn");
 
-Array.from(addNotesBtn).forEach((addBtn) => {
-    addBtn.addEventListener("click", function () {
-        let inputEle = addBtn.previousSibling.previousSibling;
-        let thatNote = addBtn.previousSibling.previousSibling.value;
-        let bookNote = addBtn.nextSibling.nextSibling;
 
-        bookNote.innerHTML = thatNote;
-        addBtn.classList.toggle("hide");
-        addBtn.classList.toggle("show");
-
-        inputEle.classList.toggle("hide");
-        inputEle.classList.toggle("show");
+function showNotesFxnContent() {
+    Array.from(addNotesBtn).forEach((addBtn) => {
+        addBtn.addEventListener("click", function () {
+            let inputEle = addBtn.previousSibling.previousSibling;
+            let thatNote = addBtn.previousSibling.previousSibling.value;
+            let bookNote = addBtn.nextSibling.nextSibling;
+    
+            bookNote.innerHTML = thatNote;
+            addBtn.classList.toggle("hide");
+            addBtn.classList.toggle("show");
+    
+            inputEle.classList.toggle("hide");
+            inputEle.classList.toggle("show");
+        });
     });
-});
+}
+
+function showNotesFxn() {
+    Array.from(addNotesBtn).forEach((addBtn) => {
+        addBtn.addEventListener("click", function () {
+            let inputEle = addBtn.previousSibling;
+            let thatNote = addBtn.previousSibling.value;
+            let bookNote = addBtn.nextSibling;
+
+            bookNote.innerHTML = thatNote;
+            addBtn.classList.toggle("hide");
+            addBtn.classList.toggle("show");
+    
+            inputEle.classList.toggle("hide");
+            inputEle.classList.toggle("show");
+        });
+    });
+}
+
+
 
 // code to add a book
 
 const addBook = document.getElementById("add-book");
 const formDiv = document.getElementById("form-div");
-// const htmlEle = document.getElementsByTagName("html");
+
 
 addBook.addEventListener("click", function () {
     formDiv.classList.toggle("noShow");
     formDiv.classList.toggle("showIt");
 });
 
+
+
+
 //code to cancel form and hide/delete book (needs fixing)
 
 const cancelForm = document.getElementById("remove-form-btn");
 const cancelBook = document.getElementsByClassName("remove-book-class");
 
+
 cancelForm.addEventListener("click", function () {
     formDiv.className = "noShow";
 });
 
-Array.from(cancelBook).forEach((rmvBook) => {
-    rmvBook.addEventListener("click", function () {
-        let removeBook = rmvBook.parentElement.parentElement.parentElement;
-        removeBook.className = "noShow";
-        console.log(removeBook);
+
+function removeBookFxn() {
+    Array.from(cancelBook).forEach((rmvBook) => {
+        rmvBook.addEventListener("click", function () {
+            let removeBook = rmvBook.parentElement.parentElement;
+            removeBook.className = "noShow";
+        });
     });
-});
+}
+
+
+function removeBookFxnContent() {
+    Array.from(cancelBook).forEach((rmvBook) => {
+        rmvBook.addEventListener("click", function () {
+            let removeBook = rmvBook.parentElement.parentElement.parentElement;
+            removeBook.className = "noShow";
+        });
+    });
+}
+
+
+
+// code to add a book to favorites
+
+
+const favBtn = document.getElementsByClassName("fav-btn");
+
+function addBookToFav() {
+    Array.from(favBtn).forEach((el) => {
+
+        el.addEventListener("click", function () {
+    
+            let favBook = el.parentElement.parentElement.parentElement;
+    
+            if (favBook.className == "book notFav") {
+                // ... then add "favBook" to it
+                favBook.classList.remove("notFav");
+                favBook.classList.add("fav");
+                favBook.classList.add("favBook");
+                // Otherwise...
+            } else {
+    
+                favBook.className = "book notFav";
+            }
+        });
+    
+    
+    });
+}
+
+function addBookToFavContent() {
+    Array.from(favBtn).forEach((el) => {
+
+        el.addEventListener("click", function () {
+    
+            let favBook = el.parentElement.parentElement.parentElement;
+    
+            if (favBook.className == "book notFav") {
+                // ... then add "favBook" to it
+                favBook.classList.remove("notFav");
+                favBook.classList.add("fav");
+                favBook.classList.add("favBook");
+                // Otherwise...
+            } else {
+    
+                favBook.className = "book notFav";
+            }
+        });
+    
+    
+    });
+}
+
+
+
+
+
 
 // code to add a book
 
@@ -225,7 +330,7 @@ function addBookCard() {
 
         //create book div element
         const bookDivEle = document.createElement("div");
-        bookDivEle.classList = "book notFav hide";
+        bookDivEle.classList = "book notFav";
 
 
 
@@ -293,6 +398,7 @@ function addBookCard() {
         const notesButton = document.createElement("button");
         notesButton.classList = "notes-btn";
         notesButton.innerHTML = "Take Notes"
+        
 
         //create input for notes
         const notesInput = document.createElement("input");
@@ -363,7 +469,7 @@ function addBookCard() {
         favBtnEle.appendChild(favBtnSvg);
 
         //put button inside div
-        favSvgDiv.appendChild(favBtnSvg);
+        favSvgDiv.appendChild(favBtnEle);
 
 
         //put fav div inside book after image div
@@ -374,131 +480,24 @@ function addBookCard() {
         bookDivEle.appendChild(imageDivEle);
 
 
-        //adding class and id to book element
-
-
-        //adding class and id to fav button
-        // favBtnEle.classList = "fav-btn";
-
-        //     bookCardEle.innerHTML += 
-        //   `  <div class="book" class="notFav" class="hide">
-        //         <div class="image-div">
-
-        //             <div id="remove-book">
-        //                 <button id="remove-book-btn" class="remove-book-class" type="button"><img src="images/cancel.png" alt="cancel"></button>
-        //             </div>
-
-        //             <h2>${eles.title}</h2>
-        //             <h3>${eles.author}</h3>
-        //             <img class="book-cover" src="${eles.url}" alt="data-structures">
-
-        //             <div class="notes-div">
-        //                 <button class="notes-btn">Take Notes</button>
-        //                 <input type="text" name="popup"  class="hide note-input">
-        //                 <button class="hide add-notes-btn">Add</button>
-        //                 <p class="note-para"></p>
-        //             </div>
-
-        //         </div>
-
-        //     </div>`
-        //     ;
-
-
+        
         booksDiv.appendChild(bookDivEle);
+        removeBookDiv.onclick = removeBookFxn()
+        notesButton.onclick = addNotesFxn();
+        addButton.onclick = showNotesFxn();
+        favBtnEle.onclick = addBookToFav();
         console.log(booksDiv);
-        // console.log(booksDiv.childNodes.childNodes);
+
     });
 
 
 }
 
 
-// code to add a book to favorites
+window.onload = function() {
+    removeBookFxnContent();
+    addNotesFxnContent();
+    showNotesFxnContent();
+    addBookToFavContent();
+}
 
-
-const favBtn = document.getElementsByClassName("fav-btn");
-
-Array.from(favBtn).forEach((el) => {
-
-    el.addEventListener("click", function () {
-
-        let favBook = el.parentElement.parentElement.parentElement;
-
-        if (favBook.className == "book") {
-            // ... then add "favBook" to it
-            favBook.classList.remove("notFav");
-            favBook.classList.add("fav");
-            favBook.classList.add("favBook");
-            // Otherwise...
-        } else {
-
-            favBook.className = "book";
-        }
-    });
-
-
-});
-
-
-
-// eventlistner on Dynamic elements
-
-
-// const favSvg = document.getElementsByClassName("fav-svg");
-
-
-// Array.from(favSvg).forEach(() => {
-//     document.addEventListener("click", function (e) {
-
-//         let favBook = e.target.parentElement.parentElement;
-
-//         if (hasClass(e.target, "fav-svg")) {
-//             if (favBook.className == "book") {
-//                 // ... then add "favBook" to it
-//                 // favBook.classList.remove("notFav");
-//                 // favBook.classList.add("fav");
-//                 // favBook.classList.add("favBook");
-//                 favBook.classList.toggle("fav favBook");
-//                 // Otherwise...
-//             } else {
-
-//                 favBook.classList.toggle("book")
-//             }
-
-//         }
-
-//     });
-// });
-
-// Array.from(notesBtn).forEach(() => {
-//     document.addEventListener("click", function (e) {
-
-//         let text = e.target.nextSibling.nextSibling;
-//         let sbmt = e.target.nextSibling.nextSibling.nextSibling.nextSibling;
-
-//         // console.log(text.className, sbmt.className);
-
-//         if (hasClass(e.target, "notes-btn")) {
-//             if (text.className == "hide note-input") {
-
-//                 text.classList.toggle("show");
-
-//             } if (sbmt.className == "hide add-notes-btn") {
-
-//                 sbmt.classList.toggle("show");
-
-//             }
-
-//         }
-//     });
-// });
-
-
-
-
-
-
-// function hasClass(elem, className) {
-//     return elem.classList.contains(className);
-// }

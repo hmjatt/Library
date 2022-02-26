@@ -53,11 +53,11 @@
             </div>
     
             <div class="books-div" id="books-div-id">
-                <div class="book" class="notFav" class="hide">
+                <div class="book notFav">
                     <div class="image-div">
 
                         <div id="remove-book">
-                            <button id="remove-book-btn" class="remove-book-class" type="button"><img src="images/cancel.png" alt="cancel"></button>
+                            <button id="remove-book-btn" class="remove-book-class" onclick="removeBookFxnContent()" type="button"><img src="images/cancel.png" alt="cancel"></button>
                         </div>
 
                         <h2>The Pragmatic Programmer</h2>
@@ -72,9 +72,9 @@
                         </div>
 
                         <div class="notes-div">
-                            <button class="notes-btn">Take Notes</button>
+                            <button class="notes-btn" onclick="addNotesFxnContent()">Take Notes</button>
                             <input type="text" name="popup"  class="hide note-input">
-                            <button class="hide add-notes-btn">Add</button>
+                            <button onclick="showNotesFxnContent()" class="hide add-notes-btn">Add</button>
                             <p class="note-para"></p>
                         </div>
                     
@@ -83,7 +83,7 @@
                         </div>
             
                         <div class="fav-svg-div">
-                            <button class="fav-btn">
+                            <button class="fav-btn" onclick="addBookToFavContent()">
                                 <img class="fav-svg" src="images/svgs/star-svg.svg" alt="add-favorite">
                             </button>
                         </div>
@@ -92,11 +92,11 @@
 
                 </div>
 
-                <div class="book" class="notFav" class="hide">
+                <div class="book notFav">
                     <div class="image-div">
 
                         <div id="remove-book">
-                            <button id="remove-book-btn" class="remove-book-class" type="button"><img src="images/cancel.png" alt="cancel"></button>
+                            <button id="remove-book-btn" class="remove-book-class" onclick="removeBookFxnContent()" type="button"><img src="images/cancel.png" alt="cancel"></button>
                         </div>
 
                         <h2>Data Structures and Algorithms Made Easy</h2>
@@ -111,9 +111,9 @@
                         </div>
 
                         <div class="notes-div">
-                            <button class="notes-btn">Take Notes</button>
+                            <button class="notes-btn" onclick="addNotesFxnContent()">Take Notes</button>
                             <input type="text" name="popup"  class="hide note-input">
-                            <button class="hide add-notes-btn">Add</button>
+                            <button class="hide add-notes-btn" onclick="showNotesFxnContent()">Add</button>
                             <p class="note-para"></p>
                         </div>
 
@@ -122,7 +122,7 @@
                         </div>
 
                         <div class="fav-svg-div">
-                            <button class="fav-btn">
+                            <button class="fav-btn" onclick="addBookToFavContent()">
                                 <img class="fav-svg" src="images/svgs/star-svg.svg" alt="add-favorite">
                             </button>
                         </div>
@@ -132,11 +132,11 @@
                 </div>
 
 
-                <div class="book" class="notFav" class="hide">
+                <div class="book notFav">
                     <div class="image-div">
 
                         <div id="remove-book">
-                            <button id="remove-book-btn" class="remove-book-class" type="button"><img src="images/cancel.png" alt="cancel"></button>
+                            <button id="remove-book-btn" class="remove-book-class" onclick="removeBookFxnContent()" type="button"><img src="images/cancel.png" alt="cancel"></button>
                         </div>
 
                         <h2>Cracking the Coding Interview</h2>
@@ -151,9 +151,9 @@
                         </div>
 
                         <div class="notes-div">
-                            <button class="notes-btn">Take Notes</button>
+                            <button class="notes-btn" onclick="addNotesFxnContent()">Take Notes</button>
                             <input type="text" name="popup"  class="hide note-input">
-                            <button class="hide add-notes-btn">Add</button>
+                            <button class="hide add-notes-btn" onclick="showNotesFxnContent()">Add</button>
                             <p class="note-para"></p>
                         </div>
 
@@ -162,51 +162,12 @@
                         </div>
 
                         <div class="fav-svg-div">
-                            <button class="fav-btn">
+                            <button class="fav-btn" onclick="addBookToFavContent()">
                                 <img class="fav-svg" src="images/svgs/star-svg.svg" alt="add-favorite">
                             </button>
                         </div>
 
                     </div>
-                </div>
-
-                <div class="book" class="notFav" class="hide">
-                    <div class="image-div">
-
-                        <div id="remove-book">
-                            <button id="remove-book-btn" class="remove-book-class" type="button"><img src="images/cancel.png" alt="cancel"></button>
-                        </div>
-
-                        <h2>Data Structures and Algorithms Made Easy</h2>
-                        <h3>Narasimha Karumanchi</h3>
-                        <img class="book-cover" src="images/data-structures.jpg" alt="data-structures">
-                        
-                        <div class="read-div">
-                            <label class="read-container">Read
-                                <input type="checkbox">
-                                <span class="checkmark"></span>
-                            </label>
-                        </div>
-
-                        <div class="notes-div">
-                            <button class="notes-btn">Take Notes</button>
-                            <input type="text" name="popup"  class="hide note-input">
-                            <button class="hide add-notes-btn">Add</button>
-                            <p class="note-para"></p>
-                        </div>
-
-                        <div class="pages-div">
-                            <p>Pages: 415</p>
-                        </div>
-
-                        <div class="fav-svg-div">
-                            <button class="fav-btn">
-                                <img class="fav-svg" src="images/svgs/star-svg.svg" alt="add-favorite">
-                            </button>
-                        </div>
-
-                    </div>
-     
                 </div>
                 
 
