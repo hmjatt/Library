@@ -388,6 +388,37 @@ function addBookCard() {
         imageDivEle.appendChild(urlEle);
 
 
+        // creating read div 
+
+        const readDiv = document.createElement("div");
+        const readDivLabel = document.createElement("label");
+        const readDivInput = document.createElement("input");
+        const readDivSpan = document.createElement("span");
+
+        // add class to read div and its elements
+        readDiv.classList = "read-div";
+        readDivLabel.classList = "read-container";
+        readDivLabel.innerHTML = "Read";
+        readDivInput.type = "checkbox";
+        readDivSpan.classList = "checkmark";
+
+        //append elements inside read div
+        readDivLabel.appendChild(readDivInput);
+        readDivLabel.appendChild(readDivSpan);
+        readDiv.appendChild(readDivLabel);
+
+        // append read div inside imagediv
+        imageDivEle.appendChild(readDiv);
+
+
+        // <div class="read-div">
+        //                     <label class="read-container">Read
+        //                         <input type="checkbox">
+        //                         <span class="checkmark"></span>
+        //                     </label>
+        //                 </div>
+
+
 
 
         //creating notes div
