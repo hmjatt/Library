@@ -3,10 +3,12 @@
 html {
     background-color: #3f3b51;
     font-family: 'Quicksand', sans-serif;
-    height: 100vh;
+    /* height: 100vh; */
     display: flex;
     flex-direction: column;
     justify-content: center;
+    min-width: 768px;
+    min-height: 1024px;
 }
 
 body {

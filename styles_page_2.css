@@ -6,26 +6,32 @@ html {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    min-width: 768px;
+    min-height: 1024px;
+    padding: 4vh;
 }
 
 body {
     display: flex;
     justify-content: center;
-   
+    min-width: 768px;
+    min-height: 1024px;
+    margin: 0px;
 }
 
 
 .container-div {
-    width: 90vw;
-    min-height: 95vh;
+    position: relative;
+    min-width: 768px;
+    min-height: 1024px;
     border-radius:40px;
     background-color: #231f20;
-    margin-bottom: 20px;
-    padding: 20px 70px;
+    /* padding: 20px 70px; */
     box-shadow: 5px 20px 25px #00000050;
 }
 
 .page-2 {
+    margin: 40px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto;
@@ -100,7 +106,7 @@ p, label {
     
     
     font-family: 'Quicksand', sans-serif;
-    width: 350px;
+    width: 300px;
     box-sizing: border-box;
     border: 2px solid #ccc;
     border-radius: 4px;
@@ -167,20 +173,22 @@ p, label {
 }
 
 .book {
-    width: 25vw;
     background-color: #413f40;
     border-radius: 15px;
+    position: relative;
     display: flex;
     justify-content: center;
 }
 
 #remove-book {
+    position: absolute;
+    top: 1%;
+    left: 95%;
     display: flex;
     justify-content: flex-end;
 }
 
 #remove-book-btn {
-    margin: -15px -40px 0px 0px;
     position: absolute;
     background: none;
     padding: 0px;
@@ -339,13 +347,17 @@ form {
 
 .add-book-div {
     display: flex;
-    position:fixed;
+    position: fixed;
     justify-content: center;
-    margin: 50px;
-    top: 85%;
-    left: 85%;
+    top:85%;
+    left: 87%;
     grid-area: add-book-div;
 }
+
+/* #add-book {
+    position: fixed;
+
+} */
 
 .add-book-div label {
     color: aliceblue;
@@ -398,7 +410,7 @@ form {
     cursor: pointer;
     background: none;
     border: none;
-    border-radius: 50px;
+    position: absolute;
 }
 
 #remove-form {
@@ -484,3 +496,36 @@ form {
     width: 40px;
 }
 
+
+@media only screen and (max-width: 850px) {
+
+    html {
+        padding: 0px;
+    }
+
+    body {
+        padding: 20px;
+    }
+
+    .books-div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
+    }
+
+    .image-div {
+        display: flex;
+        justify-content: center;
+    }
+
+    h2 {
+        align-self: center;
+    }
+
+    .book-cover {
+        width: 80%;
+        align-self: center;
+        border-radius: 10px;
+    }
+}
