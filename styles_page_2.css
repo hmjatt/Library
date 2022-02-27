@@ -529,3 +529,11 @@ form {
         border-radius: 10px;
     }
 }
+
+@media only screen and (max-width: 400px) {
+    .book-cover {
+        width: 60%;
+        align-self: center;
+        border-radius: 10px;
+    }
+}

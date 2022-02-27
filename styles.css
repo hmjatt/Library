@@ -3,12 +3,6 @@
 html {
     background-color: #3f3b51;
     font-family: 'Quicksand', sans-serif;
-    /* height: 100vh; */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    min-width: 768px;
-    min-height: 1024px;
 }
 
 body {
@@ -22,8 +16,9 @@ a {
 }
 
 .container-div {
-    height: 600px;
-    width: 300px;
+    align-self: center;
+    width: 568px;
+    height: 924px;
     border-radius:40px;
     background-color: #231f20;
     display: flex;
@@ -32,9 +27,16 @@ a {
     box-shadow: 5px 20px 25px #00000050;
 }
 
+.welcome-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .welcome-img-div {
     display: flex;
     justify-content: center;
+    margin-bottom: 100px;
 }
 
 .welcome-img-div img{
@@ -75,3 +77,10 @@ p {
     background-color: rgb(255, 203, 131);
 }
 
+
+@media only screen and (max-width: 500px) {
+    .container-div {
+        width: 60vw;
+        height: 90vh;
+    }
+}
