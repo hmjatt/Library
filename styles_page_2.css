@@ -351,7 +351,7 @@ form {
     position: fixed;
     justify-content: center;
     top:85%;
-    left: 87%;
+    left: 85%;
     grid-area: add-book-div;
 }
 
@@ -532,8 +532,35 @@ form {
 }
 
 @media only screen and (max-width: 400px) {
+
+    html {
+        min-width: 0px;
+        width: 100vw;
+        
+    }
+    
+    body {
+        padding: 10px;
+        min-width: 0px;
+    }
+
+    h1 {
+        margin: 0px;
+    }
+    
+    
+    .container-div {
+        min-width: 0px;
+        padding: 20px 10px 30px 10px;
+        width: 355px;
+    }
+
+    .page-2 {
+        margin: 0px;
+    }
+
     .book-cover {
-        width: 50%;
+        width: 90%;
         align-self: center;
         border-radius: 10px;
     }
@@ -544,5 +571,18 @@ form {
 
     .heading-div div {
         padding: 10px;
+    }
+
+    #add-book {
+        padding: 0px;
+    }
+
+    #form-div {
+        height: 80vh;
+        width: 80vw;
+    }
+
+    #form-div input {
+        width: 80vw;
     }
 }
