@@ -1,6 +1,6 @@
 # Library
 
-A small Library App to add books you love. It was created to practice Object Constructors, Prototypal Inheritance and Local Storage. Feel free to reach me at [Twitter](https://twitter.com/hmjatt/)
+A small Library App to add books you love. It was created to practice Object Constructors, Prototypal Inheritance and Local Storage. Keep on reading. Feel free to reach me at [Twitter](https://twitter.com/hmjatt/)
 
 
 
