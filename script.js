@@ -1,21 +1,58 @@
 //script for Library App
 
-// code to search for content
 
-function search() {
-    let input = document.getElementById("search-item").value;
-    let book = document.getElementsByClassName("book");
-    input = input.toLowerCase();
-    let x = document.getElementsByTagName("h2");
+//class based approach
 
-    for (i = 0; i < x.length; i++) {
-        if (!x[i].innerHTML.toLowerCase().includes(input)) {
-            book[i].style.display = "none";
-        } else {
-            book[i].style.display = "flex";
+class searchClass {
+    constructor(input, book, ele, i) {
+        this.input = input;
+        this.book = book;
+        this.ele = ele;
+        this.i = i;
+    }
+
+    get searchResult() {
+        return this.searchIt();
+    }
+
+    searchIt() {
+        // let inp = this.input.toLowerCase();
+        // let x = document.getElementsByTagName("h2");
+
+        // return this.input, this.book;
+        for (this.i < this.ele.length; this.i++;) {
+            if (!this.ele[this.i].innerHTML.toLowerCase().includes(this.input)) {
+                return this.book[this.i].style.display = "none";
+            } else {
+                return this.book[this.i].style.display = "flex";
+            }
         }
     }
 }
+
+const searchNow = new searchClass(document.getElementById("search-item").value.toLowerCase(), document.getElementsByClassName("book"), document.getElementsByTagName("h2"), 0);
+
+
+searchContent = () => {
+    console.log(searchNow.searchResult);
+}
+
+// code to search for content
+
+// function search() {
+//     let input = document.getElementById("search-item").value;
+//     let book = document.getElementsByClassName("book");
+//     input = input.toLowerCase();
+//     let x = document.getElementsByTagName("h2");
+
+//     for (i = 0; i < x.length; i++) {
+//         if (!x[i].innerHTML.toLowerCase().includes(input)) {
+//             book[i].style.display = "none";
+//         } else {
+//             book[i].style.display = "flex";
+//         }
+//     }
+// }
 
 // code to swtich between themes
 
