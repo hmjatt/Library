@@ -4,11 +4,11 @@
 //class based approach
 
 class searchClass {
-    constructor(input, book, ele, i) {
+    constructor(input, book, ele) {
         this.input = input;
         this.book = book;
         this.ele = ele;
-        this.i = i;
+        
     }
 
     get searchResult() {
@@ -18,23 +18,27 @@ class searchClass {
     searchIt() {
         // let inp = this.input.toLowerCase();
         // let x = document.getElementsByTagName("h2");
+        console.log(this.input.value,);
 
         // return this.input, this.book;
-        for (this.i < this.ele.length; this.i++;) {
-            if (!this.ele[this.i].innerHTML.toLowerCase().includes(this.input)) {
-                return this.book[this.i].style.display = "none";
+        for (let i = 0; i < this.ele.length; i++) {
+            if (!this.ele[i].innerHTML.toLowerCase().includes(this.input.value)) {
+                console.log(this.ele[i].innerHTML.toLowerCase());
+                // return this.book[i].style.display = "none";
             } else {
-                return this.book[this.i].style.display = "flex";
+                console.log(this.ele[i]);
+                // console.log(this.book);
+                // return this.book[i].style.display = "flex";
             }
         }
     }
 }
 
-const searchNow = new searchClass(document.getElementById("search-item").value.toLowerCase(), document.getElementsByClassName("book"), document.getElementsByTagName("h2"), 0);
+const searchNow = new searchClass(document.getElementById("search-item"), document.getElementsByClassName("book"), document.getElementsByTagName("h2"));
 
 
 searchContent = () => {
-    console.log(searchNow.searchResult);
+    searchNow.searchResult;
 }
 
 // code to search for content
