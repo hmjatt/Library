@@ -16,19 +16,15 @@ class searchClass {
     }
 
     searchIt() {
-        // let inp = this.input.toLowerCase();
-        // let x = document.getElementsByTagName("h2");
-        console.log(this.input.value,);
-
-        // return this.input, this.book;
+    
+    
         for (let i = 0; i < this.ele.length; i++) {
             if (!this.ele[i].innerHTML.toLowerCase().includes(this.input.value)) {
-                console.log(this.ele[i].innerHTML.toLowerCase());
-                // return this.book[i].style.display = "none";
+                
+                this.book[i].style.display = "none";
             } else {
-                console.log(this.ele[i]);
-                // console.log(this.book);
-                // return this.book[i].style.display = "flex";
+    
+                this.book[i].style.display = "flex";
             }
         }
     }
@@ -41,22 +37,6 @@ searchContent = () => {
     searchNow.searchResult;
 }
 
-// code to search for content
-
-// function search() {
-//     let input = document.getElementById("search-item").value;
-//     let book = document.getElementsByClassName("book");
-//     input = input.toLowerCase();
-//     let x = document.getElementsByTagName("h2");
-
-//     for (i = 0; i < x.length; i++) {
-//         if (!x[i].innerHTML.toLowerCase().includes(input)) {
-//             book[i].style.display = "none";
-//         } else {
-//             book[i].style.display = "flex";
-//         }
-//     }
-// }
 
 // code to swtich between themes
 
