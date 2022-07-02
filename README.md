@@ -1,12 +1,12 @@
 # Library
 
+## [Live Demo](https://hmjatt.github.io/Library/)
+
 ![This is an image](https://github.com/hmjatt/hmjatt.github.io/blob/master/images/FMkLfLGVgAAkzII.jfif)
 
 A small Library App to add books you love. It was created to practice Object Constructors, Prototypal Inheritance and Local Storage. Keep on reading. Feel free to reach me at [Twitter](https://twitter.com/hmjatt/)
 
 
-
-[Live Demo](https://hmjatt.github.io/Library/)
 
 
 
